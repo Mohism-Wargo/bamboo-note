@@ -17,41 +17,13 @@ import {Component,Prop} from 'vue-property-decorator';
 export default class Types extends Vue {
   type = '-'; // '-' 表示支出， '+' 表示收入
 
-  @Prop(Number) xxx: number | undefined;
   selectType(type: string) {
         if (type !== '-' && type !== '+') {
           throw new Error('type is unknown')
         }
         this.type = type
       }
-  mounted() {
-    if(this.xxx === undefined){
-      console.log('undefined')
-    }else{
-      console.log(this.xxx.toString())
-    }
-  }
 }
-  //  export default{
-  //   name: "Types",
-  //   props: ['xxx'],
-  //   data() {
-  //     return {
-  //       type: '-' // '-' 表示支出， '+' 表示收入
-  //     }
-  //   },
-  //   mounted(){
-  //     console.log(this.xxx)
-  //   },
-  //   methods: {
-  //     selectType(type) {
-  //       if (type !== '-' && type !== '+') {
-  //         throw new Error('type is unknown')
-  //       }
-  //       this.type = type
-  //     }
-  //   }
-  //  };
 </script>
 
 <style lang="scss" scoped>
