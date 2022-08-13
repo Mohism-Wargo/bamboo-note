@@ -1,12 +1,14 @@
 <template>
     <div>
        <layout>
-        <ol class="tags">
-            <li v-for="tag in tags" :key="tag.id">
+        <div class="tags">
+            <router-link class="tag" 
+                         v-for="tag in tags" :key="tag.id"
+                         :to="`/labels/edit/${tag.id}`">
                 <span>{{tag.name}}</span> 
                 <Icon name="rightArrows"/>
-            </li>
-        </ol>
+            </router-link>
+        </div>
         <div class="createTag-wrapper">
             <button class="createTag" @click="createTag">
              <Icon name="add"/>
@@ -43,7 +45,7 @@
 <style lang="scss" scoped>
      .tags {
         font-size: 16px;
-       >li{
+       >.tag{
         margin: 6px 6px;
         padding: 0 20px;
         min-height: 48px;
