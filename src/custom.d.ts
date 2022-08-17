@@ -26,4 +26,6 @@ type TagListModel = {
     findTag: (id: string) => Tag | undefined;
     removeTag: (id: string)=>boolean;
     updateTag: (id: string, name:string) => 'success' | 'not found' | 'duplicated'; // 或者写成 TagListModel['update']
+    recordList: RecordItem[];
+    createRecord: (record: RecordItem) => void;
   }
