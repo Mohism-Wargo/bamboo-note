@@ -21,7 +21,7 @@
   import FromItem from "@/components/Money/FromItem.vue";
   import Tags from "@/components/Money/Tags.vue";
   import {Component} from 'vue-property-decorator';
-  import store from '@/store/index2';
+  import store from '@/store/index2.ts';
 
   
   @Component({
