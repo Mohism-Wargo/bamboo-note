@@ -5,7 +5,7 @@
             <span class="title">编辑标签</span>
             <span class="rightIcon"></span>
         </div>
-        <div class="form-wrapper">
+        <div class="form-wrapper" v-if="tag">
             <FromItem :value="tag.name" 
                       @update:value="update"
                       field-name="标签名" placeholder="请输入标签名"/>
@@ -21,13 +21,13 @@ import Vue from 'vue';
 import { Component } from 'vue-property-decorator';
 import FromItem from '@/components/Money/FromItem.vue';
 import Button from '../components/Button.vue';
-import store from '@/store/index2.ts';
+import store from '@/store/index2';
 
 @Component(
     {components: {Button, FromItem}}
 )
 export default class EditLabel extends Vue{
-  tag?: Tag = undefined;
+  tag: Tag | undefined = undefined;
 
   created() {
     this.tag = store.findTag(this.$route.params.id);

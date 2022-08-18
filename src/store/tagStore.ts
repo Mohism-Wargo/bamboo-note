@@ -8,6 +8,9 @@ const tagStore = {
     this.tagList = JSON.parse(window.localStorage.getItem(localStorageKeyName) || '[]');
     return this.tagList;
   },
+  findTag(id: string) {
+    return this.tagList.find(t => String(t.id) === String(id))
+  },
   createTag(name: string) {
     const names = this.tagList.map(item => item.name);
     if (names.indexOf(name) >= 0) {
@@ -31,6 +34,7 @@ const tagStore = {
       this.saveTags();
       return true;
     }
+  },
     updateTag(id: string, name: string) {
       const idList = this.tagList.map(item => item.id);
       if (idList.indexOf(id) >= 0) {
@@ -46,11 +50,12 @@ const tagStore = {
       } else {
         return 'not found';
       }
-    }
+    },
     saveTags() {
       window.localStorage.setItem(localStorageKeyName, JSON.stringify(this.tagList));
     }
-  },
+  }
   
-  tagStore.fetchTags(),
-  export default tagStore;
+  tagStore.fetchTags()
+
+  export default tagStore
