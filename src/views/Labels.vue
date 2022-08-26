@@ -23,22 +23,21 @@
     import Vue from 'vue';
     import { Component } from 'vue-property-decorator';
     import Button from '@/components/Button.vue';
-    import store from '@/store/index';
+    import {mixins} from 'vue-class-component';
+    import TagHelper from '@/mixins/TagHelper';
 
-    @Component({
-        components: {Button}
-    })
-    export default class Labels extends Vue {
-        tags = []
-    //    tags = store.tagList;
+  @Component({
+    components: {Button},
+  })
+  export default class Labels extends mixins(TagHelper) {
+    get tags(){
+      return this.$store.state.tagList;
+    }
+    beforeCreate() {
+      this.$store.commit('fetchTags');
+    }
+  }
 
-       createTag() {
-        const name = window.prompt('请填写标签名');
-        if(name) {
-            // store.createTag(name);
-         }
-       }
-    };
 </script>
 
 <style lang="scss" scoped>
@@ -61,10 +60,10 @@
        }
      }
      .createTag{
-         background:rgb(193, 207, 207);
+         background:rgb(217, 230, 230);
          color: #fff;
          border-radius: 4px;
-         border: 1px solid rgb(187, 184, 184);
+         border: 1px solid rgb(224, 223, 223);
          width: 90px;
          height: 44px;
          &-wrapper{
