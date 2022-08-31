@@ -16,9 +16,9 @@ $font-fangSong:Baskerville, "Times New Roman", "Liberation Serif", STFangsong, F
 }
 $color-shadow: rgba(0,0,0,0.25);
 %outerShadow {
-    box-shadow: 0 0 3px $color-shadow;
+    box-shadow: 0 0 2px $color-shadow;
 }
 %innerShadow {
-    box-shadow: inset 0 -5px 5px -5px $color-shadow,
-                inset 0 5px 5px -5px $color-shadow;
+    box-shadow: inset 0 -3px 3px -3px $color-shadow,
+                inset 0 3px 3px -3px $color-shadow;
 }

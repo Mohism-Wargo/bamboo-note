@@ -1,6 +1,11 @@
 const path = require('path')
 
-module.exports = {
+module.exports = { 
+  devServer: {
+    public: require('os').networkInterfaces()
+    [Object.keys(require('os').networkInterfaces())[0]]
+    [1].address + ':8080'
+  },
   lintOnSave: false,
   chainWebpack: config =>{
     const dir = path.resolve(__dirname,'src/assets/icons')

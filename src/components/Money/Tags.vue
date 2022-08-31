@@ -1,7 +1,7 @@
 <template>
     <div class="tags">
         <div class="new">
-            <button @click="createTag">新增标签</button>
+            <button @click="createTag">-- 新增标签 --</button>
         </div>
         <ul class="current">
             <li v-for="tag in tagList" :key="tag.id"
@@ -12,7 +12,6 @@
 </template>
 
 <script lang="ts">
-   import Vue from 'vue';
    import { Component, Prop } from 'vue-property-decorator';
    import {mixins} from 'vue-class-component';
    import TagHelper from '@/mixins/TagHelper';
@@ -44,7 +43,7 @@
 <style lang="scss" scoped>
 .tags {
     font-size: 14px;
-    padding: 10px;
+    padding: 6px;
     flex-grow: 1;
     display: flex;
     flex-direction: column-reverse;
@@ -52,29 +51,40 @@
         display: flex;
         flex-wrap: wrap;
         > li {
-            background: #d9d9d9;
-            $h: 24px;
+            background: #bfd6da;
+            box-shadow: 1px 0.8px #c5c5c5;
+            $h: 30px;
             height: $h;
             line-height: $h;
-            border-radius: $h/2;
-            padding: 0 16px;
+            border-radius: 6px;
+            padding: 0 18px;
             margin-right: 16px;
             margin-top: 4px;
+            margin-bottom: 4px;
             &.selected{
-                background: #3b8896;
+                background: #62afbd;
                 color: #fff;
             }
         }
     }
     > .new{
-        padding: 16px 0;
-        button{
-            background: transparent;
-            border: none;
-            color:rgb(107, 103, 103);
-            border-bottom: 1px solid;
-            padding: 0 3px;
-        }
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0;
+        height: 40px;
+        width: 114px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #a5cdd4;
+        border-radius: 6px;
+        border: 2px solid #ebecec;
+      button{
+          background: transparent;
+          border: none;
+          color: #fff;
+          font-size: 16px;
+      }
     }
 }
 </style>

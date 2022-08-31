@@ -30,15 +30,16 @@
 
 <style lang="scss" scoped>
 .FromItem{
+    background: rgb(217, 230, 230);
     font-size: 14px;
-    padding-left: 16px;
+    padding-left: 12px;
     display: flex;
     align-items: center;
     .name{
         padding-right: 16px;
     }
     input{
-        height: 48px;
+        height: 40px;
         flex-grow: 1;
         background: transparent;
         border: none;

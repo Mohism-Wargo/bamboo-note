@@ -11,7 +11,7 @@
         </router-link>
 
         <router-link to="/statistics" class="item" active-class="selected">
-            <Icon name="money" />
+            <Icon name="statistics" />
             统计
         </router-link>
     </nav>
@@ -38,8 +38,8 @@
             align-items: center;
             flex-direction: column;
             .icon{
-                width: 32px;
-                height: 32px;
+                width: 24px;
+                height: 24px;
             }
         }
         > .item.selected{

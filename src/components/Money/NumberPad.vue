@@ -26,7 +26,7 @@ import {Component,Prop} from 'vue-property-decorator';
 
 @Component
 export default class NumberPad extends Vue {
-    @Prop() readonly value!:number;
+    @Prop(Number) readonly value!:number;
     output = this.value.toString();
 
     inputContent(event: MouseEvent) {
@@ -70,26 +70,26 @@ export default class NumberPad extends Vue {
         @extend %innerShadow;
         font-size: 36px;
         font-family: Consolas, monospace;
-        padding: 9px 16px;
+        padding: 0 12px;
         text-align: right;
-        height: 72px;
+        height: 50px;
     }
     .buttons{
         @extend %clearFix;
         > button{
             width: 25%;
-            height: 64px;
+            height: 50px;
             float: left;
             background: transparent;
             border: none;
             &.ok{
-                height: 64*2px;
+                height: 50*2px;
                 float: right;
             }
             &.zero{
                 width: 25*2%;
             }
-            $bg: #f2f2f2;
+            $bg: #c1d4d3;
             &:nth-child(1) {
                 background: $bg;
             }
