@@ -24,7 +24,7 @@
   import {Component} from 'vue-property-decorator';
   import Tabs from "@/components/Tabs.vue";
   import recordTypeList from '@/constants/recordTypeList';
-
+  import createId from '../lib/createId'
   
   @Component({
     components: { NumberPad, FromItem, Tags, Tabs },
@@ -37,7 +37,7 @@
     recordTypeList = recordTypeList;
 
     record: RecordItem = {
-     tags: [], notes: '', type:'-', amount: 0 
+     tags: [], notes: '', type:'-', amount: 0 ,id: createId().toString()
      };
     created(){
        this.$store.commit('fetchRecords')

@@ -34,8 +34,9 @@
    })
    export default class Statistics extends Vue{
      tagString(tags: Tag[]) {
+      console.log(tags)
       return tags.length === 0 ? '' :
-        tags.map(t => t.name).join('，');
+        tags.join('，');
     }
     beautify(string:string){
       const day = dayjs(string);
@@ -76,13 +77,10 @@
         }
       }
       result.map(group => {
-        group.total = group.items.reduce((sum, item) => {
-          console.log(sum);
-          console.log(item);
-          return sum + item.amount;
-        }, 0);
-      });
-    
+        group.total = Number(group.items.reduce((sum, item) => {
+          return sum + Number(item.amount);
+        }, 0).toFixed(2));
+      });    
       return result;
     }
     beforeCreate() {

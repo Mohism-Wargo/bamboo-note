@@ -16,5 +16,9 @@ body{
   color: #333;
   background: #f5f5f5;
 }
+#app{
+  max-width: 400px;
+  margin: 0 auto;
+}
 
 </style>

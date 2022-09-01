@@ -7,6 +7,7 @@ type RootState = {
 }
 
 type RecordItem = {
+    id:string,
     tags: Tag[],
     notes: string,
     type: string,
