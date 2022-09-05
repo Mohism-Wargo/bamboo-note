@@ -5,14 +5,13 @@
             <router-link class="tag" 
                          v-for="tag in tags" :key="tag.id"
                          :to="`/labels/edit/${tag.id}`">
-                <span>{{tag.name}}</span> 
-                <Icon name="rightArrows"/>
+                <span>{{tag.name}}</span>
             </router-link>
         </div>
         <div class="createTag-wrapper">
             <Button class="createTag" 
                     @click="createTag">
-                    <Icon name="add"/>
+                    -- 新增标签 --
             </Button>
         </div>
         </layout> 
@@ -40,38 +39,41 @@
 </script>
 
 <style lang="scss" scoped>
-     .tags {
-        font-size: 16px;
+   .tags{
+        height: 453px;
+        background: #e6e7e7;
+        display: flex;
+        flex-wrap: wrap;
+        overflow: scroll;
+        &::-webkit-scrollbar { width: 0px; display: none;}
        >.tag{
-        margin: 6px 6px;
-        padding: 0 20px;
-        min-height: 48px;
+        margin: auto;
+        margin-top: 6px;
+        padding: 0 auto;
+        width: 116px;
+        min-height: 50px;
+        color: rgb(50, 50, 50);
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        background: rgb(207, 235, 235);
+        text-align: center;
+        justify-content: center;        
+        background: #bfd6da;
         border-radius: 6px;
-        border: 1px solid rgb(187, 184, 184);
-        svg{
-            width: 24px;
-            height: 24px;
-        }
+        border: 2px solid #c2c8c9;
        }
      }
      .createTag{
-         background:rgb(217, 230, 230);
+         background:#a5cdd4;
          color: #fff;
          border-radius: 4px;
          border: 1px solid rgb(224, 223, 223);
-         width: 90px;
-         height: 44px;
+         width: 114px;
+         height: 40px;
+         margin-top: 6px;
+         margin-bottom: 6px;
          &-wrapper{
             text-align: center;
             padding: 18px;
-            svg{
-            width: 32px;
-            height: 32px;
+          }
         }
-      }
-     }
 </style>

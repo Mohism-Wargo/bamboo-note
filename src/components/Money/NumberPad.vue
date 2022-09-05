@@ -55,8 +55,8 @@ export default class NumberPad extends Vue {
         this.output = '0';
       }
       ok() {
-        this.$emit('update:value',this.output);
-        this.$emit('submit',this.output);
+        this.$emit('update:value',parseFloat(this.output));
+        this.$emit('submit',parseFloat(this.output));
         this.output = '0';
       } 
     }
@@ -68,22 +68,22 @@ export default class NumberPad extends Vue {
     .output{
         @extend %clearFix;
         @extend %innerShadow;
-        font-size: 36px;
+        font-size: 32px;
         font-family: Consolas, monospace;
         padding: 0 12px;
         text-align: right;
-        height: 50px;
+        height: 48px;
     }
     .buttons{
         @extend %clearFix;
         > button{
             width: 25%;
-            height: 50px;
+            height: 48px;
             float: left;
             background: transparent;
             border: none;
             &.ok{
-                height: 50*2px;
+                height: 48*2px;
                 float: right;
             }
             &.zero{

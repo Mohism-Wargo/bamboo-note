@@ -17,12 +17,14 @@ export default class Button extends Vue {
 
 <style lang="scss" scoped>
 .button{
-         background:rgb(193, 207, 207);
+         background:#a5cdd4;
          color: #fff;
          border-radius: 4px;
-         border: 1px solid rgb(187, 184, 184);
-         width: 90px;
-         height: 44px;
+         border: 1px solid rgb(224, 223, 223);
+         width: 114px;
+         height: 40px;
+         margin-top: 6px;
+         margin-bottom: 6px;
          &-wrapper{
             text-align: center;
             padding: 18px;

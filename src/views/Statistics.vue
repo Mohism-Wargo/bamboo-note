@@ -34,7 +34,6 @@
    })
    export default class Statistics extends Vue{
      tagString(tags: Tag[]) {
-      console.log(tags)
       return tags.length === 0 ? '' :
         tags.join('，');
     }
@@ -112,8 +111,10 @@
     color: #999;
   }
   .noResult {
-    padding: 16px;
+    padding: 30px;
     text-align: center;
+    font: 1.1em;
+    color:rgb(125, 173, 173)
   }
   ::v-deep {
     .type-tabs-item {
