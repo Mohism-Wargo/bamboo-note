@@ -59,7 +59,7 @@
 <style lang="scss" scoped>
    .tags{
         height: calc(100% - 136px);
-        background: #edeeee;
+        background: #f1f1f1;
         display: flex;
         flex-wrap: wrap;
         align-content:flex-start;

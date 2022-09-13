@@ -12,7 +12,7 @@
 
         <router-link to="/statistics" class="item" active-class="selected">
             <Icon name="statistics" />
-            统计
+            明细
         </router-link>
     </nav>
 </template>
@@ -30,6 +30,8 @@
         display:flex;
         flex-direction: row;
         font-size: 13px;
+        background:rgb(215, 229, 235) ;
+        color:rgb(24, 129, 129);
         > .item {
             padding: 2px 0;
             width: 33.33333333%;
@@ -43,7 +45,7 @@
             }
         }
         > .item.selected{
-            background-color: rgb(197, 235, 235);
+            background-color: rgb(130, 212, 226);
         }
     }
 </style>
