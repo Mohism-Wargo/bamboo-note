@@ -1,7 +1,7 @@
 <template>
     <div class="tags">
         <div class="new">
-            <button @click="createTag">-- 新增标签 --</button>
+            <button @click="createTag">-- 新增标签 --</button>           
         </div>
         <ul class="current">
             <li v-for="tag in tagList" :key="tag.id"
@@ -42,14 +42,19 @@
 
 <style lang="scss" scoped>
 .tags {
+    height: calc(100% - 338px);
+    background: #cfdcdd;
     font-size: 14px;
     display: flex;
     flex-direction: column-reverse;
     > .current {
-        max-height: 240px;
+        background: #edeeee;
         display: flex;
+        flex-grow: 1;
         flex-wrap: wrap;
+        align-content:flex-start;
         overflow: scroll;
+        scrollbar-width: none;
         &::-webkit-scrollbar { width: 0px; display: none;}
         > li {
             background: #bfd6da;
@@ -60,9 +65,7 @@
             font-size: 15px;
             border-radius: 6px;
             padding: 0 22px;
-            margin-right: 8px;
-            margin-top: 3px;
-            margin-bottom: 3px;
+            margin: 6px 8px;
             &.selected{
                 background: #62afbd;
                 color: #fff;
@@ -70,8 +73,8 @@
         }
     }
     > .new{
-        margin: auto;
-        height: 40px;
+        margin: 6px auto;
+        min-height: 40px;
         width: 114px;
         display: flex;
         justify-content: center;

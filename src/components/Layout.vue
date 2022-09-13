@@ -3,7 +3,7 @@
         <div class="content" :class=" classPrefix && `${classPrefix}-content` ">
             <slot></slot>
         </div> 
-        <Nav />
+        <Nav/>
     </div>
 </template>
 
@@ -23,6 +23,7 @@
    .content{
     flex-grow: 1;
     overflow: scroll;
+    scrollbar-width: none;
     &::-webkit-scrollbar { width: 0px; display: none;}    
    }
 </style>
