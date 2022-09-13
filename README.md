@@ -1,4 +1,4 @@
-# daily-pay
+# bamboo-note
 
 ## Project setup
 ```
