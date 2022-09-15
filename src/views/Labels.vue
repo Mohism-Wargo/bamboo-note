@@ -1,7 +1,7 @@
 <template>
     <div>
        <layout>
-        <div class="tagTitle">管理标签</div>
+        <div class="tagTitle">标签管理</div>
         <div class="tags">
             <div class="tag"
                          :class="{selected: selectedTags.indexOf(tag.name)>=0}"

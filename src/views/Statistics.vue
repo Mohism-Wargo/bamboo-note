@@ -8,9 +8,11 @@
               <li v-for="item in group.items" :key="item.id"
                   class="record"
                 >
+                <div class="subitem">
                 <span class="tags">{{tagString(item.tags)}}</span>
-                <span class="notes">{{item.notes}}</span>
                 <span class="amount">¥{{item.amount}} </span>
+                </div>
+                <div class="notes">{{item.notes}}</div>
               </li>
             </ol>
           </li>
@@ -92,7 +94,7 @@
 
 <style scoped lang="scss">
   %item {
-    padding: 6px 16px;
+    padding: 6px 12px;
     line-height: 24px;
     display: flex;
     justify-content: space-between;
@@ -102,22 +104,24 @@
     @extend %item;
   }
   .record {
-    background: white;
+    background: rgb(233, 235, 235);
+    margin-top: 4px;
+  }
+  .subitem{
     @extend %item;
+    font-size: 19px;
   }
   .tags {
-    width: 100px;
-    padding: 4px 0;
-    color:  #4a7979;
-  }
-  .notes {
-    margin: 0 6px;
-    color: rgb(88, 88, 88);
+    width: 54%;
+    color:  #578a8a;
   }
   .amount{
-    width: 100px;
-    padding: 4px 0;
+    width: 46%;
     text-align:right;
+  }
+  .notes {
+    padding: 2px 48px 6px;
+    color: rgb(88, 88, 88);
   }
   .noResult {
     padding: 30px;
