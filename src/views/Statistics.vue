@@ -16,6 +16,7 @@
                   </div>
                   <div class="notes">{{item.notes}}</div>
                   <div class="indexDate">{{indexDate(item.createdAt || '')}}</div>
+                  <Button class="remove" @click="remove(item)">删除</Button>
                 </li>
               </ol>
             </li>
@@ -45,13 +46,21 @@
         tags.join('，');
     }
     beautify(string:string){
+      const formatMap = {
+        year: 'YYYY 年',
+        month: 'YYYY年MM月：',
+        day: 'YYYY年MM月DD号：',
+      }
       const day = dayjs(string);
-        return day.format('YYYY年MM月DD日：');      
+      return day.format(formatMap[this.dateClass]);      
     }
     indexDate(string:string){
       const day = dayjs(string);
         return day.format('YYYY-MM-DD HH:mm');
-    }      
+    } 
+    remove(item: RecordItem) {
+      this.$store.commit('deleteRecord', item)
+    }     
     get recordList() {
       return (this.$store.state as RootState).recordList;
     }
@@ -69,24 +78,18 @@
       for (let i = 1; i < newList.length; i++) {
         const current = newList[i];
         const last = result[result.length - 1];
-        if (this.dateClass = 'days',dayjs(last.title).isSame(dayjs(current.createdAt), 'day')){
+        if (dayjs(last.title).isSame(dayjs(current.createdAt),this.dateClass)){
           last.items.push(current);
-        }
-         else if (this.dateClass = 'month',dayjs(last.title).isSame(dayjs(current.createdAt), 'month')){
-          last.items.push(current);
-        }
-         else if (this.dateClass = 'year',dayjs(last.title).isSame(dayjs(current.createdAt), 'year')){
-          last.items.push(current);
-        } 
-         else {
-           result.push({title: dayjs(current.createdAt).format('YYYY'), items: [current]});
+        } else {
+           result.push({title: dayjs(current.createdAt).format('YYYY-MM-DD'), items: [current]});
         }
       }
       result.map(group => {
         group.total = Number(group.items.reduce((sum, item) => {
           return sum + Number(item.amount);
         }, 0).toFixed(2));  //分组的统计金额
-      });    
+      });
+      console.log(result)    
       return result; //输出result，即分组的数据
     }
     
@@ -95,15 +98,16 @@
     }
     type = '-';
     recordTypeList = recordTypeList;
-    dateClass = 'days';
+    dateClass: 'day' | 'month' | 'year' = 'day';
     dateClassList = dateClassList;
    } 
+
    
 </script>
 
 <style scoped lang="scss">
   %item {
-    padding: 6px 12px;
+    padding: 4px 12px;
     line-height: 24px;
     display: flex;
     justify-content: space-between;
@@ -119,11 +123,17 @@
     &::-webkit-scrollbar { width: 0px; display: none;}
   }
   .title {
-    @extend %item;
+    padding: 6px 12px 2px;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
   }
   .record {
-    background: rgb(223, 224, 224);
-    margin-top: 3px;
+    background: rgb(183, 223, 223);
+    margin: 2px 5px 5px;
+    border-radius: 8px;
+    border: 1px solid #bbbbbb;
   }
   .subitem{
     @extend %item;
@@ -138,14 +148,15 @@
     text-align:right;
   }
   .notes {
-    padding: 2px 48px 6px;
+    width: calc(100vw);
+    padding: 2px 48px 2px;
     color: rgb(88, 88, 88);
   }
   .indexDate{
     display: flex;
     justify-content: end;
     align-items: center;
-    padding: 4px 12px;
+    padding: 2px 12px;
   }
   .noResult {
     padding: 30px;
@@ -155,6 +166,16 @@
   }
   .tabs{
     box-shadow:0 0 10px #466d6d;
+  }
+  .remove{
+    background:#6ca5a5;
+    color: #fff;  
+    border-radius: 4px;
+    border: 1.5px solid #ffffff;
+    width: 96px;
+    height: 35px;
+    margin: 3px;
+    margin-left: 67%;
   }
   ::v-deep {
     .type-tabs-item {

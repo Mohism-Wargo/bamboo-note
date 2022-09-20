@@ -52,6 +52,10 @@ const store = new Vuex.Store({
     fetchRecords(state) {
       state.recordList = JSON.parse(window.localStorage.getItem('recordList') || '[]') as RecordItem[];
     },
+    deleteRecord(state, recordToDelete: RecordItem) {
+      state.recordList = state.recordList.filter(record => record.id !== recordToDelete.id)
+      store.commit('saveRecords')
+    },
     createRecord(state,record: RecordItem) {
       const record2 = clone(record);
       record2.createdAt = new Date().toISOString();

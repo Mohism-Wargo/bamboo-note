@@ -1,6 +1,15 @@
 const path = require('path')
 
 module.exports = { 
+  pwa: { 
+    iconPaths: {
+      favicon32: 'favicon.ico', 
+      favicon316: 'favicon.ico', 
+      appleTouchIcon: 'favicon.ico',
+      maskIcon: 'favicon.ico', 
+      msTileImage: 'favicon.ico',
+    } 
+  }, // 配置 iconPaths
   devServer: {
     public: require('os').networkInterfaces()
     [Object.keys(require('os').networkInterfaces())[0]]
