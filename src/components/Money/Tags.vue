@@ -43,7 +43,7 @@
 <style lang="scss" scoped>
 .tags {
     height: calc(100% - 338px);
-    background: #cfdcdd;
+    background: #cad3d3;
     font-size: 14px;
     display: flex;
     flex-direction: column-reverse;

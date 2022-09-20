@@ -90,21 +90,21 @@
          background:#a5cdd4;
          color: #fff;
          border-radius: 4px;
-         border: 1px solid rgb(224, 223, 223);
+         border: 2px solid #ebecec;
          width: 114px;
          height: 40px;
          margin: 6px 6px;
          &-wrapper{
-            background: #cfdcdd;
+            background: #cad3d3;
             text-align: center;
             padding: 18px;
           }
         }
-        .removeTag{
+        .deleteTag{
          background:#a5cdd4;
          color: #fff;
          border-radius: 4px;
-         border: 1px solid rgb(224, 223, 223);
+         border: 2px solid #ebecec;
          width: 114px;
          height: 40px;
          margin: 6px 6px;
