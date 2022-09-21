@@ -1,7 +1,7 @@
 <template>
     <div class="tags">
         <div class="new">
-            <button @click="createTag">-- 新增标签 --</button>           
+            <button @click="createTag">新增标签</button>           
         </div>
         <ul class="current">
             <li v-for="tag in tagList" :key="tag.id"
@@ -61,10 +61,11 @@
             box-shadow: 1px 0.8px #c5c5c5;
             $h: 34px;
             height: $h;
+            max-width: 116px;
             line-height: $h;
             font-size: 15px;
             border-radius: 6px;
-            padding: 0 22px;
+            padding: 0 16px;
             margin: 6px 8px;
             &.selected{
                 background: #62afbd;
@@ -75,7 +76,7 @@
     > .new{
         margin: 6px auto;
         min-height: 40px;
-        width: 114px;
+        width: 120px;
         display: flex;
         justify-content: center;
         align-items: center;

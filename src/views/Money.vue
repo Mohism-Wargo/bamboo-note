@@ -3,7 +3,7 @@
         <Layout class-prefix="layout">
             <NumberPad :value.sync="record.amount" @submit="saveRecord"/>
             <div class="notes">
-            <FromItem field-name="备注"
+            <FromItem field-name="备注:"
                    placeholder="在这里输入备注"
                    :value.sync="record.notes"
             />

@@ -32,17 +32,19 @@
 .FromItem{
     background: rgb(217, 230, 230);
     font-size: 16px;
-    padding-left: 12px;
+    padding-left: 16px;
     display: flex;
     align-items: center;
     .name{
-        padding-right: 16px;
+        white-space: nowrap;
+        padding-right: auto;
     }
     input{
         height: 44px;
         flex-grow: 1;
         background: transparent;
         border: none;
+        padding-left: 6px;
         padding-right: 16px;
     }
 }

@@ -14,11 +14,11 @@
         <div class="createTag-wrapper">
             <Button class="createTag" 
                     @click="createTag">
-                    -- 新增标签 --
+                    新增标签
             </Button>
             <Button class="deleteTag" 
                     @click="deleteTag">
-                    -- 删除标签 --
+                    删除标签
             </Button>
         </div>
         </layout> 
@@ -91,7 +91,7 @@
          color: #fff;
          border-radius: 4px;
          border: 2px solid #ebecec;
-         width: 114px;
+         width: 120px;
          height: 40px;
          margin: 6px 6px;
          &-wrapper{
@@ -105,7 +105,7 @@
          color: #fff;
          border-radius: 4px;
          border: 2px solid #ebecec;
-         width: 114px;
+         width: 120px;
          height: 40px;
          margin: 6px 6px;
          &-wrapper{
